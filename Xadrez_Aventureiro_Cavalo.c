@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int Qdte_Movimento;
+    int Qdte_Movimento = 0;
 
     printf("Quantos movimentos voce deseja dar no cavalo? ");
     // Adicionado o & antes da variável
