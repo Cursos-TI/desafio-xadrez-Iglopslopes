@@ -1,12 +1,9 @@
-# include <stdio.h>
-
-
-i#include <stdio.h>
+#include <stdio.h>
 
 int main() {
     int Qdte_Movimento;
 
-    printf("Quantos movimentos voce deseja dar no cavalo? \n");
+    printf("Quantos movimentos voce deseja dar no cavalo? ");
     // Adicionado o & antes da variável
     scanf("%d", &Qdte_Movimento); 
 
@@ -20,9 +17,4 @@ int main() {
     }
 
     return 0;
-}
-   
-
-return 0;
-
 }
