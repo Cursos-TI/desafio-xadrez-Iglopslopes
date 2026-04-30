@@ -47,5 +47,67 @@ int main() {
         printf("\n"); // Pula linha para organizar a visualização
     }
 
+    // ---------------- NAVIOS ----------------
+
+    for (int i = 0; i < 3; i++) tabuleiro[1][1 + i] = valorNavio;
+    for (int i = 0; i < 3; i++) tabuleiro[4 + i][5] = valorNavio;
+    for (int i = 0; i < 3; i++) tabuleiro[i][7 + i] = valorNavio;
+    for (int i = 0; i < 3; i++) tabuleiro[7 + i][2 - i] = valorNavio;
+
+    // ---------------- FORMATO DE CRUZ ----------------
+
+    int habilidade[5][5];
+
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+
+            // CRUZ
+            if (i == 2 || j == 2)
+                habilidade[i][j] = 1;
+            else
+                habilidade[i][j] = 0;
+        }
+    }
+
+    // ---------------- APLICAR HABILIDADE ----------------
+
+    int origemLinha = 5;
+    int origemColuna = 5;
+
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+
+            if (habilidade[i][j] == 1) {
+
+                int l = origemLinha + (i - 2);
+                int c = origemColuna + (j - 2);
+
+                if (l >= 0 && l < 10 && c >= 0 && c < 10) {
+
+                    if (tabuleiro[l][c] == 0)
+                        tabuleiro[l][c] = 5;
+                }
+            }
+        }
+    }
+
+    // ---------------- EXIBIÇÃO NA TELA ----------------
+
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+
+            if (tabuleiro[i][j] == 0) printf(". ");
+            else if (tabuleiro[i][j] == 3) printf("N ");
+            else if (tabuleiro[i][j] == 5) printf("* ");
+
+        }
+        printf("\n");
+    }
+
+
+
+
+
+
     return 0;
 }
